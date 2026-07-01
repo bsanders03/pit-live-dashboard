@@ -1,0 +1,229 @@
+:root {
+  --bg: #061326;
+  --panel: #0b2146;
+  --panel-2: #0f2f63;
+  --text: #f8fafc;
+  --muted: #aab6ca;
+  --blue: #0b2f6b;
+  --green: #12b657;
+  --yellow: #facc15;
+  --red: #ef4444;
+  --gray: #1f2937;
+  --line: rgba(255,255,255,.12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle at top, #10366f 0%, var(--bg) 42%, #020817 100%);
+  color: var(--text);
+}
+
+.app {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0 16px;
+}
+
+.eyebrow {
+  color: #7dd3fc;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+h1, h2 { margin: 0; }
+
+h1 {
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+.status-pill {
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.progress-card, .kpi-card, .aircraft-card {
+  background: linear-gradient(180deg, var(--panel-2), var(--panel));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.32);
+}
+
+.progress-card {
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.card-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: #dbeafe;
+}
+
+.progress-track {
+  height: 28px;
+  background: #111827;
+  border: 2px solid rgba(255,255,255,.9);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--green);
+  transition: width .35s ease;
+}
+
+.progress-text {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.kpi-card {
+  padding: 14px 10px;
+  text-align: center;
+}
+
+.kpi-number {
+  font-size: 36px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.kpi-label {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  margin-top: 3px;
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin: 6px 0 10px;
+}
+
+.updated {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: right;
+}
+
+.flight-board {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 24px;
+}
+
+.aircraft-card {
+  padding: 14px;
+  border-left: 7px solid var(--yellow);
+}
+
+.aircraft-card.complete { border-left-color: var(--green); }
+.aircraft-card.priority { border-left-color: var(--red); }
+.aircraft-card.cancelled { border-left-color: #6b7280; }
+
+.aircraft-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+}
+
+.tail {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: .5px;
+}
+
+.meta {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.status {
+  text-align: right;
+  font-size: 14px;
+  font-weight: 900;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  white-space: nowrap;
+}
+
+.services-title {
+  margin: 12px 0 8px;
+  color: #dbeafe;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.service-chip {
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-weight: 900;
+  background: #991b1b;
+  color: white;
+}
+
+.service-chip.done { background: #15803d; }
+.service-chip.not-required { background: #374151; color: #9ca3af; }
+
+.empty-state {
+  text-align: center;
+  color: var(--muted);
+  background: rgba(255,255,255,.07);
+  border: 1px dashed rgba(255,255,255,.2);
+  padding: 20px;
+  border-radius: 16px;
+}

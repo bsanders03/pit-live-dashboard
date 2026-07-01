@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#061a3a" />
+  <title>PIT Live Operations</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">PIT LIVE OPERATIONS</div>
+        <h1>Nightly Services</h1>
+      </div>
+      <div id="connectionStatus" class="status-pill">Loading</div>
+    </header>
+
+    <section class="progress-card">
+      <div class="card-title">Overall Operation Progress</div>
+      <div class="progress-track">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+      <div id="progressText" class="progress-text">Loading...</div>
+    </section>
+
+    <section class="kpi-grid">
+      <div class="kpi-card">
+        <div id="aircraftRemaining" class="kpi-number">--</div>
+        <div class="kpi-label">Aircraft Remaining</div>
+      </div>
+      <div class="kpi-card">
+        <div id="priorityAircraft" class="kpi-number">--</div>
+        <div class="kpi-label">Priority Aircraft</div>
+      </div>
+      <div class="kpi-card">
+        <div id="employeesWorking" class="kpi-number">--</div>
+        <div class="kpi-label">Employees Working</div>
+      </div>
+      <div class="kpi-card">
+        <div id="servicesRemaining" class="kpi-number">--</div>
+        <div class="kpi-label">Services Remaining</div>
+      </div>
+    </section>
+
+    <section class="board-header">
+      <h2>Flight Board</h2>
+      <div id="lastUpdated" class="updated">Updated: --</div>
+    </section>
+
+    <section id="flightBoard" class="flight-board"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
