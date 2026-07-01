@@ -1,0 +1,37 @@
+{
+  "progressText": "2 OF 5 SERVICES COMPLETED",
+  "progressPercent": 40,
+  "aircraftRemaining": 1,
+  "priorityAircraft": 0,
+  "employeesWorking": 0,
+  "servicesRemaining": 3,
+  "lastUpdated": "Test Version",
+  "aircraft": [
+    {
+      "tail": "N123HQ",
+      "airline": "AA",
+      "location": "Hangar 1",
+      "status": "In Progress",
+      "priority": false,
+      "services": [
+        { "name": "RON", "complete": true },
+        { "name": "ESS", "complete": true },
+        { "name": "FD", "complete": false },
+        { "name": "LEATHER", "complete": false },
+        { "name": "FDW", "complete": false }
+      ]
+    },
+    {
+      "tail": "N764YX",
+      "airline": "YX",
+      "location": "Hangar 2",
+      "status": "Complete",
+      "priority": false,
+      "services": [
+        { "name": "RON", "complete": true },
+        { "name": "ESS", "complete": true },
+        { "name": "FD", "complete": true }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07152f" />
+  <title>PIT Live Operations</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <h1>✈️ PIT NIGHTLY SERVICES</h1>
+        <p>Live Operations Flight Board</p>
+      </div>
+      <div id="connectionStatus" class="status-pill">Loading</div>
+    </header>
+
+    <section class="progress-card">
+      <div class="section-label">OVERALL OPERATION PROGRESS</div>
+      <div class="progress-track">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+      <div id="progressText" class="progress-text">Loading...</div>
+    </section>
+
+    <section class="summary-grid">
+      <div class="summary-box">
+        <div id="aircraftRemaining" class="summary-number">--</div>
+        <div class="summary-label">Aircraft Remaining</div>
+      </div>
+      <div class="summary-box">
+        <div id="priorityAircraft" class="summary-number warning">--</div>
+        <div class="summary-label">Priority Aircraft</div>
+      </div>
+      <div class="summary-box">
+        <div id="employeesWorking" class="summary-number">--</div>
+        <div class="summary-label">Employees Working</div>
+      </div>
+      <div class="summary-box">
+        <div id="servicesRemaining" class="summary-number">--</div>
+        <div class="summary-label">Services Remaining</div>
+      </div>
+    </section>
+
+    <section class="board-section">
+      <div class="board-header">
+        <h2>Flight Board</h2>
+        <span id="aircraftCount">0 aircraft</span>
+      </div>
+      <div id="flightBoard" class="flight-board"></div>
+    </section>
+
+    <footer>
+      <div id="lastUpdated">Last Updated: --</div>
+      <div class="footer-note">Refreshes automatically</div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
