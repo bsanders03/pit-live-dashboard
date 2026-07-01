@@ -1,28 +1,224 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PIT Live Dashboard</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #07152f;
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 520px;
+      margin: auto;
+      padding: 16px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: 1px;
+    }
+
+    .sub {
+      color: #9ca3af;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .progress-card, .summary-card, .aircraft-card {
+      background: #0b2a5b;
+      border-radius: 16px;
+      padding: 14px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.35);
+    }
+
+    .progress-label {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .bar {
+      height: 22px;
+      background: #1f2937;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid #ffffff;
+    }
+
+    .bar-fill {
+      width: 40%;
+      height: 100%;
+      background: #00c853;
+    }
+
+    .progress-text {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 8px;
+      color: #ffffff;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .summary-box {
+      background: #111827;
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .summary-number {
+      font-size: 32px;
+      font-weight: bold;
+      color: #00c853;
+    }
+
+    .summary-label {
+      font-size: 13px;
+      color: #d1d5db;
+      margin-top: 4px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 18px 0 10px;
+    }
+
+    .aircraft-card.complete {
+      border-left: 6px solid #00c853;
+    }
+
+    .aircraft-card.progress {
+      border-left: 6px solid #facc15;
+    }
+
+    .tail {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .meta {
+      color: #d1d5db;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .status {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .service {
+      background: #991b1b;
+      padding: 8px 10px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .service.done {
+      background: #15803d;
+    }
+
+    .updated {
+      text-align: center;
+      color: #9ca3af;
+      font-size: 13px;
+      margin-top: 18px;
+    }
+  </style>
 </head>
-<body style="font-family: Arial; background:#07152f; color:white; margin:0; padding:16px;">
-  <h1>✈️ PIT NIGHTLY SERVICES</h1>
-  <h2 style="color:#00c853;">100% COMPLETE</h2>
 
-  <div style="background:#0b2a5b; padding:12px; border-radius:12px; margin-bottom:12px;">
-    <strong>Aircraft Remaining:</strong> 1<br>
-    <strong>Employees Working:</strong> 0<br>
-    <strong>Services Remaining:</strong> 0
+<body>
+  <div class="container">
+
+    <div class="header">
+      <h1>✈️ PIT NIGHTLY SERVICES</h1>
+      <div class="sub">Live Operations Flight Board</div>
+    </div>
+
+    <div class="progress-card">
+      <div class="progress-label">OVERALL OPERATION PROGRESS</div>
+      <div class="bar">
+        <div class="bar-fill"></div>
+      </div>
+      <div class="progress-text">2 OF 5 SERVICES COMPLETED</div>
+    </div>
+
+    <div class="summary-card">
+      <div class="summary-grid">
+        <div class="summary-box">
+          <div class="summary-number">1</div>
+          <div class="summary-label">Aircraft Remaining</div>
+        </div>
+        <div class="summary-box">
+          <div class="summary-number">0</div>
+          <div class="summary-label">Priority Aircraft</div>
+        </div>
+        <div class="summary-box">
+          <div class="summary-number">0</div>
+          <div class="summary-label">Employees Working</div>
+        </div>
+        <div class="summary-box">
+          <div class="summary-number">3</div>
+          <div class="summary-label">Services Remaining</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Flight Board</div>
+
+    <div class="aircraft-card progress">
+      <div class="tail">N123HQ</div>
+      <div class="meta">AA • Hangar 1</div>
+      <div class="status">🟡 In Progress</div>
+      <div class="services">
+        <div class="service done">RON</div>
+        <div class="service done">ESS</div>
+        <div class="service">FD</div>
+        <div class="service">LEATHER</div>
+        <div class="service">FDW</div>
+      </div>
+    </div>
+
+    <div class="aircraft-card complete">
+      <div class="tail">N764YX</div>
+      <div class="meta">YX • Hangar 2</div>
+      <div class="status">✅ Complete</div>
+      <div class="services">
+        <div class="service done">RON</div>
+        <div class="service done">ESS</div>
+        <div class="service done">FD</div>
+      </div>
+    </div>
+
+    <div class="updated">Last Updated: Test Version</div>
+
   </div>
-
-  <h2>Flight Board</h2>
-
-  <div style="background:#111827; padding:12px; border-radius:12px; margin-bottom:10px;">
-    <h3>N123HQ</h3>
-    <p><strong>Location:</strong> Hangar 1</p>
-    <p><strong>Status:</strong> ✅ Complete</p>
-    <p><strong>Services:</strong> RON • ESS • FD • LEATHER • FDW</p>
-  </div>
-
-  <p style="color:#9ca3af;">Last Updated: Test Version</p>
 </body>
 </html>
